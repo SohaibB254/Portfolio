@@ -1,10 +1,17 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Navbar from './components/layout/Navbar'
 
 const App = () => {
   return (
-    <div className='text-xl'>
-      This is Portfolio
-    </div>
+ <>
+ <Navbar/>
+  <Routes>
+    <Route path='/' element={<Home/>}/>
+
+  </Routes>
+ </>
   )
 }
 
