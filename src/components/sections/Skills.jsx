@@ -10,8 +10,11 @@ import git from "../../assets/images/Icons/git.png";
 import figma from "../../assets/images/Icons/figma.png";
 import vscode from "../../assets/images/Icons/vscode.png";
 import { MoveUpRight } from "lucide-react";
+import { useTheme } from "../../context/ThemeContext";
+
 
 const Skills = () => {
+  let { theme } = useTheme()
   let arr = [
   {
     "name": "HTML",
@@ -60,7 +63,7 @@ const Skills = () => {
         Skills & Tools
       </h1>
       <div className="flex flex-col gap-4">
-           <p className="text-gray-400 italic  text-xs">~checkout my skills</p>
+           <p className="text-(--textMini) italic  text-xs">~checkout my skills</p>
       <div id="Skills" className="grid grid-cols-5 gap-8">
         {arr.map((s,id) => {
           return (
@@ -69,7 +72,7 @@ const Skills = () => {
               className="w-24 flex items-center flex-col   p-2 rounded-md border-3 border-(--textLight)"
               id="skills"
             >
-              <img className="w-12" src={s.image} alt="" />
+              <img className={`w-12 ${theme === 'dark'?'brightness-400':''}`} src={s.image} alt="" />
               <p className="text-(--textLight)">{s.name}</p>
             </div>
           );

@@ -1,5 +1,6 @@
 import { MoveUpRight } from "lucide-react";
 import React from "react";
+import devPic from '../../assets/images/dev/about-card.png'
 
 const About = () => {
   return (
@@ -7,12 +8,14 @@ const About = () => {
       <div className="flex flex-col items-center py-8 gap-16">
         <h1 className="text-4xl text-(--textLight) font-bold font-dm">About</h1>
         {/* About card */}
-        <div className="flex bg-white/80 p-4  gap-8 rounded-2xl">
+        <div className="flex bg-(--sectionLight) p-4  gap-8 rounded-2xl">
           <div className="w-[350px] flex flex-col  gap-8" id="about">
             <div
-              className="w-[350px] h-[150px] rounded-2xl bg-black"
+              className="w-[350px] overflow-hidden h-[150px] rounded-2xl bg-(--shapeLight)"
               id="img"
-            ></div>
+            >
+              <img src={devPic} alt="" />
+            </div>
             <div id="text" className=" text-sm flex flex-col gap-4 font-inter">
               <p className="text-(--textSec)">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -24,7 +27,7 @@ const About = () => {
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Dignissimos, ipsum?
               </p>
-              <p className="font-medium font-dm">Lorem, ipsum dolor.</p>
+              <p className="font-medium text-(--textSec)  font-dm">Lorem, ipsum dolor.</p>
             </div>
             <div id="cta">
               <button className="bg-(--shapeLight) flex text-sm items-center gap-2 font-inter hover:text-(--textDark) hover:bg-(--bgDark) mt-4 p-2 px-4 cursor-pointer text-(--textLight) transition rounded-full">
@@ -40,12 +43,12 @@ const About = () => {
           >
             <div className="flex flex-col gap-8">
               <div id="heading">
-                <h1 className="text-2xl font-bold font-dm">Let's talk!</h1>
+                <h1 className="text-2xl text-(--textLight) font-bold font-dm">Let's talk!</h1>
                 <p className="text-(--textSec) font-inter text-sm">
                   An advice/suggestion or just a friendly hi!
                 </p>
               </div>
-              <form className="flex flex-col  gap-4 items-center">
+              <form className="flex flex-col text-(--textLight)  gap-4 items-center">
                 <input
                   type="text"
                   placeholder="Your name"
@@ -63,7 +66,7 @@ const About = () => {
                 />
               </form>
             </div>
-            <button className="bg-(--bgLight) border border-(--textLight) flex text-sm items-center gap-2 font-inter hover:text-(--textDark) hover:bg-(--bgDark)  p-2 px-8 w-fit self-center cursor-pointer text-(--textLight) transition rounded-full">
+            <button className="bg-(--bgLight) border border-(--textLight) flex text-sm items-center gap-2 font-inter hover:text-(--textDark) hover:bg-(--bgDark)  p-2 px-6 w-fit self-center cursor-pointer text-(--textLight) transition rounded-full">
               Send
             </button>
           </div>

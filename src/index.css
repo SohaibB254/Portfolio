@@ -8,13 +8,54 @@
     --bgDark:  #222222;
     --textLight: #222222;
     --textDark:#ECECEC;
-    --textSec:#4a5565;
+    --textMini: #b8b8b8;
+    --textMiniDark: #343434;
+    --textSec:#73777c;
+    --btnBg:#cfcfcf;
+    --btnBgDark:#000000;
+    --textSecDark:#616365;
     --sectionLight:#E6E6E6;
     --sectionDark:#292929;
     --shapeLight: #d2d2d2;
     --shapeDark:#000000;
     --accent:#8B5CF6;
 }
+.dark{
+    --bgLight:var(--bgDark);
+    --textLight: var(--textDark);
+    --sectionLight: var(--sectionDark);
+    --shapeLight: var(--shapeDark);
+    --textSec:var(--textSecDark);
+    --textMini: var(--textMiniDark);
+    --btnBg: var(--btnBgDark)
+}
+html.transitioning {
+  transition: none;
+}
+
+html.transitioning::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  animation: fadeTheme 0.4s ease forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes fadeTheme {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Smooth transition for all elements */
+
+
+
 /* Custom Font classes */
 .font-inter {
     font-family: Inter;

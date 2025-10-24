@@ -12,10 +12,10 @@ const Projects = () => {
         {id:3, title:'News app',img: p3},
     ]
   return (
-    <div className='flex flex-col bg-white/80 items-center gap-16 mt-16 py-8'>
+    <div className='flex flex-col bg-(--sectionLight) items-center gap-16 mt-16 py-8'>
       <h1 className='text-4xl text-(--textLight) font-bold font-dm'>Featured Projects</h1>
       <div className='flex flex-col items-center gap-4'>
-  <p className="text-gray-400 italic self-start text-xs">~See what I have done</p>
+  <p className="text-(--textMini) italic self-start text-xs">~See what I have done</p>
       <div className='flex flex-col items-center gap-16' id="projects">
         {/* Projects */}
         {
@@ -25,12 +25,12 @@ const Projects = () => {
                          <div key={pr.id} className={`flex gap-24 ${isOdd ? 'flex-row-reverse':''}  w-full justify-center`} id="project">
             {/* Project Image */}
             <div className='w-[350px] h-[300px] object-cover overflow-hidden rounded-md bg-gray-700' id="img">
-                <img className='object-cover h-full' src={pr.img} alt="" />
+                <img className='object-cover grayscale-100 hover:grayscale-0 transition duration-500 h-full' src={pr.img} alt="" />
             </div>
             {/* Project Details */}
             <div className='flex w-[350px] flex-col gap-2' id='Details'>
             <div className=' flex flex-col gap-4' id="text">
-                <h1 className='font-dm font-bold text-2xl'>{pr.title}</h1>
+                <h1 className='font-dm font-bold text-(--textLight) text-2xl'>{pr.title}</h1>
                 <p className='text-(--textSec) text-sm font-inter'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae pariatur quisquam et rerum fugit beatae a deserunt aut molestias dolorum earum voluptatum id delectus quas excepturi architecto, odit accusamus suscipit? Doloribus cumque possimus debitis sequi.</p>
             </div>
             {/* Project Tags */}

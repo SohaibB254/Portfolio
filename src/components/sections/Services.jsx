@@ -9,7 +9,7 @@ const Services = () => {
     ]
   return (
     <div className='flex flex-col items-center mt-8 pt-8 gap-16  px-24'>
-      <h1 className='text-4xl font-bold font-dm'>Why Choose Me?</h1>
+      <h1 className='text-4xl font-bold text-(--textLight) font-dm'>Why Choose Me?</h1>
       <div className='flex flex-col gap-24 '>
         {/* Service */}
         {
