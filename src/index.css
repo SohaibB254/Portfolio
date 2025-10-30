@@ -1,23 +1,26 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Pacifico&display=swap');
 /* Tailwind */
 @import "tailwindcss";
 /* Colors */
 :root{
     --bgLight: #D9D9D9;
     --bgDark:  #222222;
+    --borderLight:#222222;
     --textLight: #222222;
     --textDark:#ECECEC;
     --textMini: #b8b8b8;
     --textMiniDark: #343434;
     --textSec:#73777c;
-    --btnBg:#cfcfcf;
-    --btnBgDark:#000000;
+    --btnBg: #000000;
+    --btnText:#ECECEC;
+    --btnTextDark:#222222;
+    --btnBgDark:#cfcfcf;
     --textSecDark:#616365;
     --sectionLight:#E6E6E6;
     --sectionDark:#292929;
     --shapeLight: #d2d2d2;
-    --shapeDark:#000000;
+    --shapeDark:#272727;
     --accent:#8B5CF6;
 }
 .dark{
@@ -27,7 +30,9 @@
     --shapeLight: var(--shapeDark);
     --textSec:var(--textSecDark);
     --textMini: var(--textMiniDark);
-    --btnBg: var(--btnBgDark)
+    --btnBg: var(--btnBgDark);
+    --btnText:var(--btnTextDark);
+    --borderLight:#b6b6b6;
 }
 html.transitioning {
   transition: none;
@@ -60,6 +65,9 @@ html.transitioning::before {
 .font-inter {
     font-family: Inter;
 }
+.font-outfit {
+  font-family: Outfit;
+}
 .font-dm {
     font-family: DM Sans;
 }
@@ -74,3 +82,9 @@ body{
     color: transparent;
 }
 
+@media screen and (max-width : 620px) {
+  #expText {
+    -webkit-text-stroke: 1px  var(--textLight);
+    color: transparent;
+}
+}

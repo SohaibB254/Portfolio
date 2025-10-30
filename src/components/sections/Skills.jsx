@@ -11,6 +11,7 @@ import figma from "../../assets/images/Icons/figma.png";
 import vscode from "../../assets/images/Icons/vscode.png";
 import { MoveUpRight } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext";
+import { Link } from "react-router-dom";
 
 
 const Skills = () => {
@@ -59,12 +60,12 @@ const Skills = () => {
 ]
   return (
     <div className="flex flex-col items-center mt-8 gap-16">
-      <h1 className="text-4xl font-bold text-(--textLight) font-dm ">
+      <h1 className="sm:text-4xl text-2xl font-bold text-(--textLight) font-dm ">
         Skills & Tools
       </h1>
       <div className="flex flex-col gap-4">
-           <p className="text-(--textMini) italic  text-xs">~checkout my skills</p>
-      <div id="Skills" className="grid grid-cols-5 gap-8">
+           <p className="text-(--textMini) italic  text-xs">~Checkout my skills</p>
+      <div id="Skills" className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-8">
         {arr.map((s,id) => {
           return (
             <div
@@ -79,10 +80,11 @@ const Skills = () => {
         })}
       </div>
          </div>
+         {/* CTA  */}
        <div id="cta">
-                <button className="bg-(--shapeLight) flex items-center gap-2 font-inter hover:text-(--textDark) hover:bg-(--bgDark) mt-4 p-3 px-8 cursor-pointer text-(--textLight) border transition rounded-full">
-                  View More <MoveUpRight className="border rounded-full p-0.5" size={20}/>
-                </button>
+                <Link to={'/devskills'} className="flex items-center gap-2 font-inter hover:bg-(--sectionLight) mt-4 p-2 px-4 text-xs sm:text-base   cursor-pointer text-(--textLight) border border-(--borderLight) transition-color duration-300 rounded-full">
+                  View More
+                </Link>
               </div>
     </div>
   );
