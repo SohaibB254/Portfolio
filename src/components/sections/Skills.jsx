@@ -70,7 +70,7 @@ const Skills = () => {
           return (
             <div
             key={id}
-              className="w-24 flex items-center flex-col   p-2 rounded-md border-3 border-(--textLight)"
+              className="w-24 flex items-center flex-col hover:scale-105 transition duration-200  p-2 rounded-md border-3 border-(--textLight)"
               id="skills"
             >
               <img className={`w-12 ${theme === 'dark'?'brightness-400':''}`} src={s.image} alt="" />
@@ -81,11 +81,11 @@ const Skills = () => {
       </div>
          </div>
          {/* CTA  */}
-       <div id="cta">
-                <Link to={'/devskills'} className="flex items-center gap-2 font-inter hover:bg-(--sectionLight) mt-4 p-2 px-4 text-xs sm:text-base   cursor-pointer text-(--textLight) border border-(--borderLight) transition-color duration-300 rounded-full">
-                  View More
-                </Link>
-              </div>
+      <div id="cta">
+                      <Link aria-description='Button for viewing all skills' to={'/devskills'} className=" flex  items-center text-xs sm:text-base  gap-2 font-inter hover:text-(--textDark) hover:bg-(--bgDark) mt-4 p-2 px-4 cursor-pointer border border-(--borderLight) text-(--textLight) transition rounded-full">
+                        View More
+                      </Link>
+                    </div>
     </div>
   );
 };

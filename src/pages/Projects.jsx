@@ -1,7 +1,7 @@
 import React from "react";
 import p1 from "../assets/images/Projects/p1.jpg";
 import p2 from "../assets/images/Projects/p2.jpg";
-import p3 from "../assets/images/Projects/p3.jpg";
+import p3 from "../assets/images/Projects/p3.png";
 import { MoveUpRight } from "lucide-react";
 
 const Projects = () => {
@@ -119,9 +119,10 @@ let projects = [
             return (
               <div
                 key={pr.id}
-                className={`flex w-[250px]  h-[350px]  flex-col md:gap-8 group  relative   `}
+                className={`flex w-[250px]  h-[350px] shadow-sm rounded-2xl flex-col md:gap-8 group  relative   `}
                 id="project"
               >
+                {/* Coming soon absolute div */}
                 <div className="bg-(--bgLight)/40 backdrop-blur-xs flex items-center text-xl text-(--textLight) font-bold justify-center z-30 h-full rounded-2xl w-full absolute">
                 Coming Soon...</div>
                 {/* Project Image */}

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div>
-      <div className="flex flex-col items-center py-8 gap-16">
+      <div className="flex flex-col items-center py-8 sm:px-0 px-8 gap-16">
         <h1 className="md:text-4xl text-3xl text-(--textLight) font-bold font-dm">About</h1>
         <div className="flex md:flex-row flex-col bg-(--sectionLight) p-4  gap-8 rounded-2xl">
         {/* About card */}
@@ -28,7 +28,7 @@ const About = () => {
             </div>
             {/* Cta */}
             <div id="cta">
-              <Link to={'/about'} className="bg-(--shapeLight) flex text-sm items-center w-fit gap-2 font-inter hover:text-(--textDark) hover:bg-(--bgDark) mt-4 p-2 px-4 cursor-pointer text-(--textLight) transition rounded-full">
+              <Link to={'/about'} className="bg-(--shapeLight) flex text-sm items-center w-fit gap-2 font-inter hover:text-(--btnText) hover:bg-(--btnBg) mt-4 p-2 px-4 cursor-pointer text-(--textLight) transition rounded-full">
                 Read More
                 <MoveUpRight className="border rounded-full p-0.5" size={20} />
               </Link>
@@ -59,7 +59,7 @@ const About = () => {
                 />
                 <textarea
                   type="text"
-                  placeholder="Your name"
+                  placeholder="Your Message"
                   className="border outline-none resize-none border-gray-400 placeholder-gray-400 p-3 w-full rounded-xl"
                 />
               </form>

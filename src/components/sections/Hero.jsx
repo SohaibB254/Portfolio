@@ -3,20 +3,21 @@ import devArt from "../../assets/images/dev/hero-art.png";
 
 const Hero = () => {
   return (
+    <div className="relative">
     <div className="flex justify-center transition py-8 lg:px-0 px-8">
       <div className="flex flex-col items-center lg:items-start">
-        <div className="flex flex-col justify-center  duration-300 tracking-wide font-light   md:text-[75px] sm:text-[70px] text-[38px] text-(--textLight) transition-all  sm:leading-24 font-outfit">
-          <span className="">
+        <div className="flex flex-col justify-center items-center lg:items-start   duration-300 sm:tracking-wide lg:font-light   md:text-[75px] sm:text-[70px] text-[40px] text-(--textLight) transition-all leading-12  sm:leading-24 font-outfit">
+          <span className="tracking-wider lg:tracking-wide transition">
             Hi, I am
             <span className="font-semibold"> Sohaib</span>
           </span>
-          <div className="flex lg:gap-4 lg:flex-row font-light     flex-col">
+          <div className="flex lg:gap-4 lg:flex-row tracking-wide lg:font-light flex-col items-center">
             Creating Digital
-            <span id="expText" className="lg:tracking-wide tracking-[8px] font-sans transition  font-bold">
+            <span id="expText" className="lg:tracking-wide tracking-[6px] sm:tracking-[10px] font-sans transition  font-bold">
               Experiences
             </span>
           </div>
-          <div className="lg:hidden font-light">
+          <div className="lg:hidden lg:font-light whitespace-nowrap">
              with <span className="font-semibold">MERN</span> Stack.
           </div>
         </div>
@@ -35,7 +36,7 @@ const Hero = () => {
               {/* Socials & CTA  */}
               <div
                 id="socials"
-                className="flex flex-col items-center lg:items-start gap-14 lg:gap-4"
+                className="flex flex-col items-center lg:items-start gap-24 lg:gap-4"
               >
                 <div id="cta" className="flex flex-col sm:gap-2 gap-1">
                   <button className="bg-(--btnBg) font-inter hover:text-(--accent) w-24 sm:w-44 lg:w-auto mt-4 p-2 text-xs sm:p-3 lg:px-10 sm:text-base cursor-pointer text-(--btnText)  transition rounded-full">
@@ -53,7 +54,7 @@ const Hero = () => {
                   ~Check these out
                 </p>
 
-                <div className="flex gap-4">
+                <div className="flex gap-4 z-10">
                   <div className="h-16 w-16 p-2 cursor-pointer text-(--textLight) text-3xl flex items-center justify-center rounded-xl border-3 border-(--textLight)">
                     <i className="fa-brands fa-github"></i>
                   </div>
@@ -69,15 +70,16 @@ const Hero = () => {
             </div>
             {/* Dev Image */}
             <div
-              className="h-[350px] mt-4 hidden  lg:flex transition justify-center overflow-hidden w-[330px] bg-(--sectionLight) rounded-2xl"
+              className="h-[350px] mt-4 hidden hover:shadow-[0_0_25px_rgba(var(--accent-rgb),0.2)] duration-500 lg:flex transition-all justify-center overflow-hidden w-[330px] bg-(--sectionLight) rounded-2xl"
               id="img"
             >
-              <img className=" h-full grayscale-100  " src={devArt} alt="" />
+              <img className=" h-full  grayscale-100  " src={devArt} alt="" />
             </div>
           </div>
         </div>
       </div>
 
+    </div>
     </div>
   );
 };

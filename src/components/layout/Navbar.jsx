@@ -1,4 +1,4 @@
-import { ArrowDown, House, Moon, Sun,FolderCode,Brain,User, Folder } from "lucide-react";
+import {  House, Moon, Sun,FolderCode,Brain,User } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import pfp from "../../assets/images/dev/dp.png";
@@ -24,7 +24,7 @@ const Navbar = () => {
         <h1 className="font-logo text-(--textLight) text-2xl">Sohaib</h1>
       </div>
       {/* Menu */}
-      <div className="relative  ">
+      <div className="relative">
         <ul
           className={`flex z-40 fixed lg:static lg:flex-row flex-col lg:h-auto h-full lg:translate-x-0  top-18 lg:p-0 px-10 right-0 py-4 bg-(--bgLight) gap-8  text-(--textLight) ${
             isNavOpen ? "translate-x-0" : "translate-x-100"
@@ -46,15 +46,15 @@ const Navbar = () => {
       </div>
       {/* Overlay */}
       {isNavOpen && (
-        <div onClick={toggleNav} className="fixed inset-0 lg:hidden backdrop-blur-xs bg-(--bgLight)/20 z-30"></div>
+        <div onClick={toggleNav} className="fixed inset-0 lg:hidden  backdrop-blur-xs bg-(--bgLight)/20 z-30"></div>
       )}
       {/* ThemeIcon and CTA */}
-      <div className="flex text-(--textLight) z-40 items-center gap-4">
+      <div className="flex text-(--textLight) z-40 items-center  gap-4">
         {theme === "light" && (
-          <Sun size={18} onClick={toggleTheme} strokeWidth={1} />
+          <Sun className="active:rotate-90 transition-all duration-500" size={18} onClick={toggleTheme} strokeWidth={1} />
         )}
         {theme === "dark" && (
-          <Moon size={18} onClick={toggleTheme} strokeWidth={1} />
+          <Moon className="active:rotate-90 transition-all duration-500" size={18} onClick={toggleTheme} strokeWidth={1} />
         )}
         {/* Menu Btn */}
         <div

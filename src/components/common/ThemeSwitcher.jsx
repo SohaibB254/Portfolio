@@ -1,25 +1,36 @@
-import { useTheme } from "../context/ThemeContext";
-import { Moon, Sun, Laptop } from "lucide-react";
+import { useState } from "react";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "../../context/ThemeContext";
 
 export default function ThemeSwitcher() {
-  const { theme, toggleTheme } = useTheme();
+  const [rotating, setRotating] = useState(false);
+  const { theme, toggleTheme } = useTheme()
+  const handleClick = () => {
+    setRotating(true);
+    toggleTheme();
 
-  const icon =
-    theme === "light" ? (
-      <Moon size={18} />
-    ) : theme === "dark" ? (
-      <Sun size={18} />
-    ) : (
-      <Laptop size={18} />
-    );
+    // Reset rotation state after animation ends
+    setTimeout(() => setRotating(false), 500);
+  };
 
   return (
     <button
-      onClick={toggleTheme}
-      className="p-2 rounded-full transition-all duration-500 bg-(--shapeLight) hover:scale-105"
-      title={`Switch theme (current: ${theme})`}
+      onClick={handleClick}
+      className="transition-transform duration-500 transform origin-center"
     >
-      {icon}
+      {theme === "light" ? (
+        <Sun
+          className={`${rotating ? "rotate-90" : ""} transition-transform duration-500`}
+          size={18}
+          strokeWidth={1}
+        />
+      ) : (
+        <Moon
+          className={`${rotating ? "rotate-90" : ""} transition-transform duration-500`}
+          size={18}
+          strokeWidth={1}
+        />
+      )}
     </button>
   );
 }

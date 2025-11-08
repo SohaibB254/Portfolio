@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import school from '../assets/images/illustrations/school.png'
 import person from '../assets/images/illustrations/person.png'
-import devPic from '../assets/images/dev/hero-art.png'
-
-
+import devPic from '../assets/images/dev/hero-real.png'
+import useFadeUpOnScroll from '../hooks/useFadeUpOnScroll'
 
 const About = () => {
+useFadeUpOnScroll('.fade-up')
   const [textShow, setTextShow ] = useState(false)
   return (
     <div className='sm:px-16 px-4 pb-8 transition-all duration-300 '>
@@ -17,7 +17,7 @@ const About = () => {
                 <img className='h-full object-cover grayscale hover:grayscale-0 transition duration-500' src={devPic} alt="" />
             </div>
             <div className={`flex-1 text-(--textSec)`} id="text">
-               <p className={`${textShow ? 'line-clamp-none':'line-clamp-3'} line-clamp-3 lg:line-clamp-12 xl:line-clamp-none`}> Hi! I’m Sohaib Zaman, a passionate learner and aspiring web developer from Punjab, Pakistan. My journey into tech began around 7–8 years ago when I first discovered web development — and instantly got hooked.
+               <p className={`${textShow ? 'line-clamp-none':'line-clamp-3'} fade-up line-clamp-3 lg:line-clamp-12 xl:line-clamp-none`}> Hi! I’m Sohaib Zaman, a passionate learner and aspiring web developer from Punjab, Pakistan. My journey into tech began around 7–8 years ago when I first discovered web development — and instantly got hooked.
              In 2020, I started learning the basics of HTML and CSS, but life had its ups and downs, which pulled me away for a while. In 2023, I decided to return stronger. I rebuilt my foundation and took on JavaScript — it was tough at first, with no proper guidance, but step by step, I started to get the hang of it. Like most beginners, I thought I had mastered JS early on — but soon realized there was so much more to learn.
              Later, I moved to Lahore, hoping to find an internship or job while continuing to grow. That’s when I began learning React.js, followed a structured course for two months, and even after an 8-month break, I came back more consistent than ever.
             Since July 2025, I’ve stayed committed — learning, building, and improving every day. I’ve always wanted to turn this passion into a profession, and I’m constantly driven to learn new technologies and challenge myself further.</p>
@@ -29,7 +29,7 @@ const About = () => {
         This is random text for design: 😁Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab porro rem nihil labore quo ipsa aliquam, voluptatibus consequatur accusantium dicta? Atque commodi a ut voluptas corporis distinctio ullam ea tempore voluptates aliquam. Sapiente, repudiandae at. Doloribus officiis placeat quis sapiente. Labore eveniet, obcaecati quaerat veniam quo id, cumque qui, quidem eaque nobis voluptates deleniti dolore alias velit provident natus rem! Inventore necessitatibus perferendis aut quod excepturi atque laboriosam blanditiis saepe quas libero et optio ipsa tenetur autem assumenda corporis soluta, in dicta error reiciendis tempora repellendus. Voluptatem maiores earum maxime neque hic ex deserunt magni, labore, ratione minima odio. Quis voluptatem animi impedit quibusdam quae dolorem. Recusandae porro dolore, officiis molestiae quo impedit quos dolorum illum tempore libero ipsam, quasi non enim assumenda voluptate placeat accusamus dolorem velit eius? Sint, libero cum vel adipisci accusamus esse possimus minus minima at, non nam vitae excepturi similique blanditiis nulla saepe quasi sit.
          </p>
          {/* Education Section */}
-            <div className={`flex lg:flex-row-reverse  flex-col  lg:gap-44 gap-4 justify-between items-center`}>
+            <div className={`flex lg:flex-row-reverse  flex-col fade-up  lg:gap-44 gap-4 justify-between items-center`}>
                <div className='md:w-[300px] w-[250px]  object-cover overflow-hidden rounded-md ' id="image">
                    <img className='w-full  hover:grayscale-0 duration-500 transition grayscale-100' src={school} alt="" />
                </div>
@@ -43,11 +43,11 @@ const About = () => {
                </div>
              </div>
              {/* Hobbies and interest */}
-              <div className={`flex lg:flex-row flex-col gap-4 lg:gap-44 justify-between items-center`}>
+              <div className={`flex lg:flex-row flex-col gap-4 fade-up lg:gap-44 justify-between items-center`}>
                <div className='md:w-[300px] w-[250px]  object-cover overflow-hidden rounded-md ' id="image">
-                   <img className='w-full  hover:grayscale-0 hover:rotate-y-180 transition grayscale-100' src={person} alt="" />
+                   <img className='w-full  hover:grayscale-0 hover:rotate-y-180 duration-500 transition grayscale-100' src={person} alt="" />
                </div>
-               <div className='flex flex-col gap-4 lg:flex-1 ' id="text">
+               <div className='flex flex-col gap-4 lg:flex-1' id="text">
                    <h1 className='md:text-2xl text-xl text-(--textLight) font-dm font-bold'>Interests and Hobbies</h1>
                    <p className='text-(--textSec) font-inter lg:line-clamp-10 xl:line-clamp-none'>When I’m not coding, you’ll probably find me working out, gaming, or spending time with friends.
                    I believe a healthy body fuels a sharp mind, so I stay consistent with my workouts to keep both my energy and focus in check. Gaming and occasional social media breaks help me unwind, reset, and come back with fresh ideas.
@@ -56,7 +56,7 @@ const About = () => {
                </div>
              </div>
              {/* Contact and Socials */}
-              <div className={`flex flex-col-reverse  lg:gap-0 gap-8  lg:flex-row-reverse justify-between `}>
+              <div className={`flex flex-col-reverse  lg:gap-0 gap-8 fade-up lg:flex-row-reverse justify-between `}>
                 {/* Contact form */}
           <div
             id="contactForm"

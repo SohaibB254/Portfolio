@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Pacifico&display=swap');
 /* Tailwind */
 @import "tailwindcss";
+
+body{
+  overflow-x: hidden;
+} 
 /* Colors */
 :root{
     --bgLight: #D9D9D9;
@@ -12,16 +16,17 @@
     --textMini: #b8b8b8;
     --textMiniDark: #343434;
     --textSec:#73777c;
-    --btnBg: #000000;
+    --btnBg: #111111;
+    --btnBgDark:#cfcfcf;
     --btnText:#ECECEC;
     --btnTextDark:#222222;
-    --btnBgDark:#cfcfcf;
     --textSecDark:#616365;
     --sectionLight:#E6E6E6;
     --sectionDark:#292929;
     --shapeLight: #d2d2d2;
-    --shapeDark:#272727;
+    --shapeDark:#212121;
     --accent:#8B5CF6;
+    --accent-rgb:139, 92, 246;
 }
 .dark{
     --bgLight:var(--bgDark);
@@ -33,6 +38,7 @@
     --btnBg: var(--btnBgDark);
     --btnText:var(--btnTextDark);
     --borderLight:#b6b6b6;
+    --accent-rgb:139, 85, 254;
 }
 html.transitioning {
   transition: none;
@@ -56,11 +62,6 @@ html.transitioning::before {
     opacity: 0;
   }
 }
-
-/* Smooth transition for all elements */
-
-
-
 /* Custom Font classes */
 .font-inter {
     font-family: Inter;
@@ -87,4 +88,73 @@ body{
     -webkit-text-stroke: 1px  var(--textLight);
     color: transparent;
 }
+}
+/* Styles for Floating Shapes component */
+/* Floating animation */
+@keyframes drift {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    transform: translate(40vw, -10vh) rotate(45deg) scale(1.1);
+    filter: hue-rotate(40deg);
+  }
+  50% {
+    transform: translate(-20vw, 30vh) rotate(90deg) scale(0.9);
+    filter: hue-rotate(80deg);
+  }
+  75% {
+    transform: translate(30vw, 20vh) rotate(135deg) scale(1.05);
+    filter: hue-rotate(120deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(180deg) scale(1);
+    filter: hue-rotate(180deg);
+  }
+}
+
+.animate-drift {
+  animation: drift linear infinite;
+}
+
+/* Shape styles */
+.shape {
+  position: absolute;
+  transition: all 0.3s ease;
+  mix-blend-mode: lighten;
+}
+
+/* Different shapes */
+.circle {
+  border-radius: 50%;
+  width: clamp(80px, 10vw, 150px);
+  height: clamp(80px, 10vw, 150px);
+}
+
+.square {
+  width: clamp(100px, 12vw, 180px);
+  height: clamp(100px, 12vw, 180px);
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: clamp(60px, 6vw, 100px) solid transparent;
+  border-right: clamp(60px, 6vw, 100px) solid transparent;
+  border-bottom: clamp(100px, 10vw, 160px) solid var(--shapeLight);
+  background: none;
+}
+
+.diamond {
+  width: clamp(90px, 8vw, 140px);
+  height: clamp(90px, 8vw, 140px);
+  background: var(--shapeLight);
+  transform: rotate(45deg);
+}
+
+.oval {
+  border-radius: 50%;
+  width: clamp(120px, 15vw, 200px);
+  height: clamp(60px, 8vw, 100px);
 }
