@@ -6,7 +6,7 @@ import js from "../../assets/images/Icons/js.png";
 import react from "../../assets/images/Icons/React.png";
 import mongo from "../../assets/images/Icons/mongo.png";
 import express from "../../assets/images/Icons/Express.png";
-import git from "../../assets/images/Icons/git.png";
+import git from "../../assets/images/Icons/Git.png";
 import figma from "../../assets/images/Icons/figma.png";
 import vscode from "../../assets/images/Icons/vscode.png";
 import { useTheme } from "../../context/ThemeContext";
