@@ -3,7 +3,7 @@ import html from "../assets/images/Icons/html.png";
 import css from "../assets/images/Icons/css.png";
 import tl from "../assets/images/Icons/tw.png";
 import js from "../assets/images/Icons/js.png";
-import react from "../assets/images/Icons/react.png";
+import react from "../assets/images/Icons/React.png";
 import mongo from "../assets/images/Icons/mongo.png";
 import express from "../assets/images/Icons/express.png";
 import nodejs from "../assets/images/Icons/nodejs.png";
